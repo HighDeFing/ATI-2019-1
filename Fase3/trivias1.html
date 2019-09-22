@@ -30,24 +30,24 @@
  </head>
  
  <body>
-   <div class="wrapper ">
-     <div class="sidebar" data-color="purple" data-background-color="white" data-image="./assets/img/sidebar-1.jpg>
+   <div class="wrapper">
+     <div class="sidebar" data-color="purple" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
        <!--
        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
  
        Tip 2: you can also add an image using data-image tag
    -->
        <div class="logo">
-         <a href="Home.html" class="simple-text logo-mini">
+         <a href="home.html" class="simple-text logo-mini">
            Home
          </a>
-         <a href="Home.html" class="simple-text logo-normal">
+         <a href="home.html" class="simple-text logo-normal">
            Home
          </a>
        </div>
        <div class="sidebar-wrapper">
          <ul class="nav">
-           <li class="nav-item">
+           <li class="nav-item active  ">
              <a class="nav-link" href="./home.html">
                <i class="material-icons">dashboard</i>
                <p>Trivias</p>
@@ -72,17 +72,16 @@
                    <p>Help</p>
                  </a>
              </li>
-             <li class="nav-item active">
-                     <a class="nav-link" href="./notifications.html">
-                       <i class="material-icons">notifications</i>
-                       <p>Notifications</p>
-                     </a>
-                   </li>
+             <li class="nav-item ">
+                 <a class="nav-link" href="./notifications.html">
+                   <i class="material-icons">notifications</i>
+                   <p>Notifications</p>
+                 </a>
+               </li>
          </ul>
        </div>
      </div>
      <div class="main-panel">
- 
  
        <!-- Navbar -->
        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
@@ -104,8 +103,13 @@
                  </a>
                </li>
                <!-- your navbar here -->
-               <button class="btn btn-primary">Login</button>
-               <button class="btn btn-primary btn-link">Register</button>
+               <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#loginModal">
+                 Login<i class="material-icons">assignment</i>
+               </button>
+               <button class="btn btn-primary btn-link" data-toggle="modal" data-target="#signupModal">
+                 <i class="material-icons">assignment</i>
+                 SignUp
+             </button>
                <li class="nav-item dropdown">
                  <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    <i class="material-icons">person</i>
@@ -135,61 +139,65 @@
                <div class="col-md-4">
                  <!-- First Trivia -->
                    <div class="card" style="width: 20rem;">
-                       <div class="card-header card-header-warning">
-                         Trivia 1
+                       <div class="card-header card-header-info">
+                         TV Trivia 1
                        </div>
                        <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
                        <div class="card-body">
                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                         <a href="#0" class="btn btn-primary">Go trivia 1</a>
+                         <a href="#0" class="btn btn-info">Go trivia</a>
                        </div>
                          </div>
                        </div>
  
                        <!-- Second Column -->
                <div class="col-md-4">
-                 <!-- Second Trivia -->
+                 <!-- Second Category Trivia -->
                    <div class="card" style="width: 20rem;">
-                       <div class="card-header card-header-warning">
-                         Trivia 2
+                       <div class="card-header card-header-info">
+                        TV Trivia 2
                        </div>
                        <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
                        <div class="card-body">
                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                         <a href="#0" class="btn btn-primary">Go trivia 2</a>
+                         <a href="#0" class="btn btn-info">Go trivia</a>
                        </div>
                      </div> <!-- End Second Trivia -->
                    </div> <!-- End Second Column -->
  
                    <!-- Third Column -->
                    <div class="col-md-4">
-                     <!-- Third Trivia -->
+                     <!-- Third Category Trivia -->
                    <div class="card" style="width: 20rem;">
-                       <div class="card-header card-header-warning">
-                         Trivia 3
+                       <div class="card-header card-header-info">
+                        TV Trivia 3
                        </div>
                        <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
                        <div class="card-body">
                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                         <a href="#0" class="btn btn-primary">Go trivia 3</a>
+                         <a href="#0" class="btn btn-info">Go trivia</a>
                        </div>
                      </div>
                    </div>
  
                  </div> <!-- End First Row -->
- 
+                 <!-- Second Row -->
+                 <div class="row">
+                 <!-- First Column -->
+                 <div class="col-md-4">
+                   <!-- Fourth Category Trivia -->
                  <div class="card" style="width: 20rem;">
-                     <div class="card-header card-header-warning">
-                       Trivia 4
+                     <div class="card-header card-header-info">
+                        TV Trivia 4
                      </div>
                      <img class="card-img-top" src="https://images.unsplash.com/photo-1517303650219-83c8b1788c4c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd4c162d27ea317ff8c67255e955e3c8&auto=format&fit=crop&w=2691&q=80" alt="Card image cap">
                      <div class="card-body">
                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                       <a href="#0" class="btn btn-primary">Go trivia 4</a>
+                       <a href="#0" class="btn btn-info">Go trivia</a>
                      </div>
                    </div>
- 
-         </div>
+                 </div>
+               </div> <!-- End First Row -->
        </div>
  
  
@@ -216,6 +224,195 @@
        </footer>
      </div>
    </div>
+ 
+ <!-- login -->
+ <div class="modal fade" id="loginModal" tabindex="-1" role="">
+   <div class="modal-dialog modal-login" role="document">
+       <div class="modal-content">
+         <!--modal content-->
+           <div class="card card-signup card-plain">
+               <div class="modal-header">
+                 <div class="card-header card-header-primary text-center">
+                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                     <i class="material-icons">clear</i>
+                   </button>
+ 
+                         <h4 class="card-title">Log in</h4>
+                           <div class="social-line">
+                             <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                               <i class="fa fa-facebook-square"></i>
+                             </a>
+                             <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                               <i class="fa fa-twitter"></i>
+                             <div class="ripple-container"></div></a>
+                           </div>
+                   </div>
+                 </div>
+               <div class="modal-body">
+                   <form class="form" method="" action="">
+                       <p class="description text-center">Or Be Classical</p>
+                       <div class="card-body">
+ 
+                           <div class="form-group bmd-form-group">
+                               <div class="input-group">
+                                 <div class="input-group-prepend">
+                                   <div class="input-group-text"><i class="material-icons">face</i></div>
+                                 </div>
+                                 <input type="text" class="form-control" placeholder="First Name...">
+                               </div>
+                           </div>
+ 
+                           <div class="form-group bmd-form-group">
+                               <div class="input-group">
+                                 <div class="input-group-prepend">
+                                   <div class="input-group-text"><i class="material-icons">email</i></div>
+                                 </div>
+                                 <input type="text" class="form-control" placeholder="Email...">
+                               </div>
+                           </div>
+ 
+                           <div class="form-group bmd-form-group">
+                               <div class="input-group">
+                                 <div class="input-group-prepend">
+                                   <div class="input-group-text"><i class="material-icons">lock_outline</i></div>
+                                 </div>
+                                 <input type="password" placeholder="Password..." class="form-control">
+                               </div>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+               <div class="modal-footer justify-content-center">
+                   <a href="#pablo" class="btn btn-primary btn-link btn-wd btn-lg">Get Started</a>
+               </div>
+           </div>
+       </div>
+   </div>
+ </div>
+ </div>
+ <!-- end of login-->
+ 
+ <!-- sign up-->
+ <div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
+   <div class="modal-dialog modal-signup" role="document">
+     <div class="modal-content">
+       <div class="card card-signup card-plain">
+         <div class="modal-header">
+           <h5 class="modal-title card-title">Register</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <i class="material-icons">clear</i>
+           </button>
+         </div>
+         <div class="modal-body">
+           <div class="row">
+             <div class="col-md-5 ml-auto">
+               <div class="info info-horizontal">
+                 <div class="icon icon-rose">
+                   <i class="material-icons">timeline</i>
+                 </div>
+                 <div class="description">
+                   <h4 class="info-title">Marketing</h4>
+                   <p class="description">
+                   We've created the marketing campaign of the website. It was a very interesting collaboration.
+                   </p>
+                 </div>
+               </div>
+ 
+               <div class="info info-horizontal">
+                 <div class="icon icon-primary">
+                   <i class="material-icons">code</i>
+                 </div>
+                 <div class="description">
+                   <h4 class="info-title">Fully Coded in HTML5</h4>
+                   <p class="description">
+                   We've developed the website with HTML5 and CSS3. The client has access to the code using GitHub.
+                   </p>
+                 </div>
+               </div>
+ 
+               <div class="info info-horizontal">
+                 <div class="icon icon-info">
+                   <i class="material-icons">group</i>
+                 </div>
+                 <div class="description">
+                   <h4 class="info-title">Built Audience</h4>
+                   <p class="description">
+                   There is also a Fully Customizable CMS Admin Dashboard for this product.
+                   </p>
+                 </div>
+               </div>
+             </div>
+ 
+             <div class="col-md-5 mr-auto">
+               <div class="social text-center">
+                 <button class="btn btn-just-icon btn-round btn-twitter">
+                   <i class="fa fa-twitter"></i>
+                 </button>
+                 <button class="btn btn-just-icon btn-round btn-facebook">
+                   <i class="fa fa-facebook-square"></i>
+                 </button>
+                 <h4> or be classical </h4>
+               </div>
+ 
+               <form class="form" method="" action="">
+                 <div class="card-body">
+                   <div class="form-group">
+                     <div class="input-group">
+                       <div class="input-group-prepend">
+                         <div class="input-group-text"><i class="material-icons">face</i></div>
+                       </div>
+                         <input type="text" class="form-control" placeholder="First Name...">
+                     </div>
+                   </div>
+ 
+                 <div class="form-group">
+                   <div class="input-group">
+                     <div class="input-group-prepend">
+                       <div class="input-group-text"><i class="material-icons">email</i></div>
+                     </div>
+                       <input type="text" class="form-control" placeholder="Email...">
+                   </div>
+                 </div>
+ 
+                 <div class="form-group">
+                   <div class="input-group">
+                     <div class="input-group-prepend">
+                       <div class="input-group-text"><i class="material-icons">lock_outline</i></div>
+                     </div>
+                       <input type="password" placeholder="Password..." class="form-control" />
+                   </div>
+                 </div>
+ 
+                 <div class="form-check">
+                   <label class="form-check-label">
+                       <input class="form-check-input" type="checkbox" value="" checked>
+                       <span class="form-check-sign">
+                           <span class="check"></span>
+                       </span>
+                       I agree to the <a href="#something">terms and conditions</a>.
+                   </label>
+                 </div>
+                 </div>
+               <div class="modal-footer justify-content-center">
+               <a href="#pablo" class="btn btn-primary btn-round">Get Started</a>
+               </div>
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <!--sing up end-->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
    <!--   Core JS Files   -->
    <script src="assets/js/core/jquery.min.js"></script>
