@@ -249,7 +249,7 @@
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="material-icons">face</i></div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="First Name...">
+                                <input type="text" class="form-control" placeholder="First Name..." id="admin">
                               </div>
                           </div>
 
@@ -280,7 +280,7 @@
                     </button>
                 </div>
               <div class="modal-footer justify-content-center">
-                  <a href="./user.html" class="btn btn-primary btn-link btn-wd btn-lg">Login</a>
+                  <a class="btn btn-primary btn-link btn-wd btn-lg" id="login">Login</a>
               </div>
           </div>
       </div>
@@ -446,11 +446,24 @@
 
 
 
+  <!--access admin-->
 
-
+<script>
+    document.getElementById("login").addEventListener("click", function() {
+            var x = document.getElementById("admin").value;
+        if (x == "admin"){
+          window.location.href = "./admin/homeadmin.html";
+        } else {
+          window.location.href = "./user.html";
+        }
+    });
+    </script>
 
 
   <!--   Core JS Files   -->
+  
+
+
   <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap-material-design.min.js"></script>
