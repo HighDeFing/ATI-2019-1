@@ -26,20 +26,20 @@
    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
    <!-- Material Kit CSS -->
-   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+   <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
  </head>
  
  <body>
    <div class="wrapper">
-     <div class="sidebar" data-color="purple" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+     <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
        <!--
        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
  
        Tip 2: you can also add an image using data-image tag
    -->
        <div class="logo">
-         <a href="./home.html" class="simple-text logo-mini">
-           <img  src="./assets/img/iconPreguntaGenerico.jpg" height="120" width="120" >
+         <a href="./homeadmin.html" class="simple-text logo-mini">
+           <img  src="../assets/img/iconPreguntaGenerico.jpg" height="120" width="120" >
          </a>
          <a href="#pablo" class="simple-text logo-normal">
             Grupo 1
@@ -48,16 +48,16 @@
        <div class="sidebar-wrapper">
          <ul class="nav">
            <li class="nav-item active  ">
-             <a class="nav-link" href="./Home.html">
+             <a class="nav-link" href="./homeadmin.html">
                <i class="material-icons">dashboard</i>
                <p>Trivias</p>
              </a>
            </li>
            <!-- your sidebar here -->
            <li class="nav-item ">
-               <a class="nav-link" href="./user.html">
+               <a class="nav-link" href="./useradmin.html">
                  <i class="material-icons">person</i>
-                 <p>User Profile</p>
+                 <p>Admin Profile</p>
                </a>
              </li>
            <li class="nav-item ">
@@ -98,12 +98,9 @@
            <div class="collapse navbar-collapse justify-content-end">
              <ul class="navbar-nav">
                <!-- your navbar here -->
-               <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#loginModal">
-                 Login<i class="material-icons">assignment</i>
-               </button>
-               <button class="btn btn-primary btn-link" data-toggle="modal" data-target="#signupModal">
-                 <i class="material-icons">assignment</i>
-                 SignUp
+               
+
+
              </button>
              <!-- Notifications -->
              <li class="nav-item dropdown">
@@ -125,7 +122,7 @@
              <!-- Notification end-->
                <li class="nav-item dropdown">
                  <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   <i class="material-icons">person</i>
+                   <i class="material-icons">person</i>Admin
                    <p class="d-lg-none d-md-block">
                      Account
                    </p>
@@ -157,7 +154,7 @@
                          <div class="card-header card-header-info">
                            Super Heroes Trivia
                          </div>
-                         <img class="card-img-top" src="./assets/img/trivia11/marvel-heroes.jpg" alt="Card image cap">
+                         <img class="card-img-top" src="../assets/img/trivia11/marvel-heroes.jpg" alt="Card image cap">
                          <div class="card-body">
                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                            <a href="./trivias1.html" class="btn btn-info">Go trivia</a>
@@ -451,66 +448,66 @@
  
  
    <!--   Core JS Files   -->
-   <script src="assets/js/core/jquery.min.js"></script>
-   <script src="assets/js/core/popper.min.js"></script>
-   <script src="assets/js/core/bootstrap-material-design.min.js"></script>
+   <script src="../assets/js/core/jquery.min.js"></script>
+   <script src="../assets/js/core/popper.min.js"></script>
+   <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
  
    <!-- Plugin for the Perfect Scrollbar -->
-   <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
  
    <!-- Plugin for the momentJs  -->
-   <script src="assets/js/plugins/moment.min.js"></script>
+   <script src="../assets/js/plugins/moment.min.js"></script>
  
    <!--  Plugin for Sweet Alert -->
-   <script src="assets/js/plugins/sweetalert2.js"></script>
+   <script src="../assets/js/plugins/sweetalert2.js"></script>
  
    <!-- Forms Validations Plugin -->
-   <script src="assets/js/plugins/jquery.validate.min.js"></script>
+   <script src="../assets/js/plugins/jquery.validate.min.js"></script>
  
    <!--  Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-   <script src="assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+   <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
  
    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-   <script src="assets/js/plugins/bootstrap-selectpicker.js" ></script>
+   <script src="../assets/js/plugins/bootstrap-selectpicker.js" ></script>
  
    <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-   <script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+   <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
  
    <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
-   <script src="assets/js/plugins/jquery.datatables.min.js"></script>
+   <script src="../assets/js/plugins/jquery.datatables.min.js"></script>
  
    <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-   <script src="assets/js/plugins/bootstrap-tagsinput.js"></script>
+   <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
  
    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
-   <script src="assets/js/plugins/jasny-bootstrap.min.js"></script>
+   <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
  
    <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-   <script src="assets/js/plugins/fullcalendar.min.js"></script>
+   <script src="../assets/js/plugins/fullcalendar.min.js"></script>
  
    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-   <script src="assets/js/plugins/jquery-jvectormap.js"></script>
+   <script src="../assets/js/plugins/jquery-jvectormap.js"></script>
  
    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-   <script src="assets/js/plugins/nouislider.min.js" ></script>
+   <script src="../assets/js/plugins/nouislider.min.js" ></script>
  
    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
  
    <!-- Library for adding dinamically elements -->
-   <script src="assets/js/plugins/arrive.min.js"></script>
+   <script src="../assets/js/plugins/arrive.min.js"></script>
  
    <!--  Google Maps Plugin    -->
    <script  src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
  
    <!-- Chartist JS -->
-   <script src="assets/js/plugins/chartist.min.js"></script>
+   <script src="../assets/js/plugins/chartist.min.js"></script>
  
    <!--  Notifications Plugin    -->
-   <script src="assets/js/plugins/bootstrap-notify.js"></script>
+   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
  
    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-   <script src="assets/js/material-dashboard.min.js?v=2.1.1" type="text/javascript"></script>
+   <script src="../assets/js/material-dashboard.min.js?v=2.1.1" type="text/javascript"></script>
  </body>
  
  </html>
