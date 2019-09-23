@@ -73,7 +73,7 @@
                   <p>Help</p>
                 </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" href="./notificationsadmin.html">
                   <i class="material-icons">notifications</i>
                   <p>Notifications</p>
@@ -83,6 +83,12 @@
                   <a class="nav-link" href="./Administrador.html">
                     <i class="material-icons">Opciones de Administrador</i>
                     <p>Gestionar Trivia</p>
+                  </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="./visualizar ganadores.html">
+                    <i class="material-icons">accessibility</i>
+                    <p>Ganadores</p>
                   </a>
                 </li>
         </ul>
@@ -95,7 +101,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Status de los premios</a>
+            <a class="navbar-brand" href="#pablo">Visualizar los ganadores</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -119,7 +125,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="./useradmin.html">Profile</a>
+                  <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="../Home.html">Log out</a>
@@ -130,7 +136,6 @@
         </div>
       </nav>
       <!-- End Navbar -->
-
       <div class="content">
         <div class="container-fluid">
           <!-- your content here -->
@@ -138,28 +143,31 @@
 
 
       <div class="progress-container">
-    <span class="progress-badge">Primer premio 25%</span>
+    <span class="progress-badge">Primer premio ENVIADO</span>
     <div class="progress">
-        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+        <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">
         </div>
     </div>
 </div>
-<div class="progress-container progress-primary">
-    <span class="progress-badge">Segundo premio 35% </span>
+<div class="progress-container progress-success">
+    <span class="progress-badge">Segundo premio POR ENTREGAR </span>
     <div class="progress">
-        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
         </div>
     </div>
 </div>
 <div class="progress-container progress-danger">
-    <span class="progress-badge">Tercer premio 40%</span>
+    <span class="progress-badge">Tercer premio ENTREGADO</span>
     <div class="progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 35%;">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
         </div>
     </div>
 </div>
 
-
+<button type="button" class="btn btn-info" onclick="location.href='./visualizar ganadores.html'">
+                  Volver
+                </button>
+                
 
 
 
