@@ -38,10 +38,10 @@
       Tip 2: you can also add an image using data-image tag
   -->
       <div class="logo">
-        <a href="./home.html" class="simple-text logo-mini">
+        <a href="home.html" class="simple-text logo-mini">
           <img  src="{{ url_for('static', filename='img/iconPreguntaGenerico.jpg') }}" height="120" width="120" >
         </a>
-        <a href="#pablo" class="simple-text logo-normal">
+        <a href="" class="simple-text logo-normal">
            Grupo 1
         </a>
       </div>
@@ -219,7 +219,7 @@
                   </div>
                 </div>
               <div class="modal-body">
-                  <form class="form" method="" action="">
+                  <form class="form" method="POST" action="/login">
                       <p class="description text-center">Or Be Classical</p>
                       <div class="card-body">
 
@@ -228,28 +228,31 @@
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="material-icons">face</i></div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="First Name..." id="admin">
+                                <input type="text" class="form-control" name="username" placeholder="First Name..." id="admin">
                               </div>
                           </div>
 
-                          <div class="form-group bmd-form-group">
-                              <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <div class="input-group-text"><i class="material-icons">email</i></div>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Email...">
-                              </div>
-                          </div>
+<!--                          <div class="form-group bmd-form-group">-->
+<!--                              <div class="input-group">-->
+<!--                                <div class="input-group-prepend">-->
+<!--                                  <div class="input-group-text"><i class="material-icons">email</i></div>-->
+<!--                                </div>-->
+<!--                                <input type="text" class="form-control" placeholder="Email...">-->
+<!--                              </div>-->
+<!--                          </div>-->
 
                           <div class="form-group bmd-form-group">
                               <div class="input-group">
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="material-icons">lock_outline</i></div>
                                 </div>
-                                <input type="password" placeholder="Password..." class="form-control">
+                                <input type="password" placeholder="Password..." name="password" class="form-control">
                               </div>
                           </div>
                       </div>
+                       <div class="modal-footer justify-content-center">
+                  <input class="btn btn-primary btn-round" id="login" type="submit"></input>
+                        </div>
                   </form>
 
               </div>
@@ -258,9 +261,7 @@
                       Recuperar contraseña
                     </button>
                 </div>
-              <div class="modal-footer justify-content-center">
-                  <a class="btn btn-primary btn-link btn-wd btn-lg" id="login">Login</a>
-              </div>
+
           </div>
       </div>
   </div>
@@ -427,16 +428,16 @@
 
   <!--access admin-->
 
-<script>
-    document.getElementById("login").addEventListener("click", function() {
-            var x = document.getElementById("admin").value;
-        if (x == "admin"){
-          window.location.href = "./admin/homeadmin.html";
-        } else {
-          window.location.href = "./user.html";
-        }
-    });
-    </script>
+<!--<script>-->
+<!--    document.getElementById("login").addEventListener("click", function() {-->
+<!--            var x = document.getElementById("admin").value;-->
+<!--        if (x == "admin"){-->
+<!--          window.location.href = "./admin/homeadmin.html";-->
+<!--        } else {-->
+<!--          window.location.href = "./user.html";-->
+<!--        }-->
+<!--    });-->
+<!--    </script>-->
   <!--   Core JS Files   -->
 
 
