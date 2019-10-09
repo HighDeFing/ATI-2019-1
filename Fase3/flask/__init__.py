@@ -30,7 +30,7 @@ def home(name=None):
         punkty=0
         return render_template('home.html', name='home.html')
     elif session.get('logged_in'):
-        return "Hello " + request.form['username']
+        return render_template('homelogin.html', name='home.html')
 
 
 @app.route('/login', methods=['POST'])
