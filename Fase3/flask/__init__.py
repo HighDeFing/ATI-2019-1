@@ -41,6 +41,13 @@ def do_user_login():
         flash('wrong password')
     return home()
 
+
+@app.route("/logout")
+def logout():
+    session['logged_in'] = False
+    return home()
+
+
 @app.route('/Home.html', methods=['GET', 'POST'])
 def home1():
     return redirect("/home.html")
