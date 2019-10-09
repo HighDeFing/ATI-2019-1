@@ -149,22 +149,26 @@
         <div class="container-fluid">
           <!-- your content here -->
           <!-- First Row -->
+          {% if todos[0] %}
           <table class="col-md-12">
               <tr id="row" >
-                <th class="name" >Pregunta</th>
-                
+                <th class="name" >Categoria</th>
+                <th class="desc" >Descripcion</th>
             <th class="func1">eliminar</th>
             <th class="func2">modificar</th>
               </tr>
           {% for todo in todos %}
             <tr class="datas" >
               <td class="name" >{{ todo["question"] }}</td>
-              <td class="func1" ><a href="./remove?_id={{ todo['_id'] }}"><button type="submit"  class="btn btn-info" >eliminar</button></a></td>
-              <td class="func1" ><a href="./update?_id={{ todo['_id'] }}"><button type="submit" class="btn btn-info" >modificar</button></a></td>
+              
+              <td class="func1" ><a href="./removeTrivia?_id={{ todo['_id'] }}"><button type="submit"  class="btn btn-info" >eliminar</button></a></td>
+              <td class="func1" ><a href="./ModificarTrivia.html?_id={{ todo['_id'] }}"><button type="submit" class="btn btn-info" >modificar</button></a></td>
             </tr>
           {% endfor %}
           </table>
-
+          {% else %}
+            <h4>No Tasks in the List !!</h4>
+          {% endif %}
 
           <form action="/actionCT" method="POST">
           <table  class="col-md-12">

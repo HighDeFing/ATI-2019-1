@@ -55,28 +55,36 @@ def action3 ():
 	todos.update({"_id":ObjectId(id)}, {'$set':{ "Categoria":name, "desc":desc}})
 	return redirect("/")
 
-
-client = MongoClient("mongodb://127.0.0.1:27017") #host uri
-db = client.Trivias    #Select the database
 todosT = db.Trivia11 #Select the collection name
-todos_lT = todosT.find()
 
 @app.route("/CrearTrivia.html")
 def CTrivia ():
-
+	todos_lT = todosT.find()
 	return render_template("/CrearTrivia.html",todos=todos_lT,t=title,h=heading)
 
 @app.route("/ModificarTrivia.html")
 def MTrivia ():
+	todos_lT = todosT.find()
 	id=request.values.get("_id")
 	task=todosT.find({"_id":ObjectId(id)})
 	return render_template('ModificarTrivia.html',tasks=task,h=heading,t=title)
+
+
+
+@app.route("/removeTrivia")
+def removeT ():
+	todos_lT = todosT.find()
+	#Deleting a Task with various references
+	key=request.values.get("_id")
+	todosT.remove({"_id":ObjectId(key)})
+	return redirect("/CrearTrivia.html")
 
 @app.route("/Administrador.html")
 def AdminTri ():
 	#Deleting a Task with various references
 
-	return render_template('Administrador.html')
+	return redirect("/CrearTrivia.html")
+
 
 @app.route("/actionCT", methods=['POST'])
 def actionCT ():
@@ -97,13 +105,9 @@ def actionCT ():
 
 @app.route("/actionMT", methods=['POST'])
 def actionMT ():
-
+	
 	Categoria=request.values.get("select")
 
-	client = MongoClient("mongodb://127.0.0.1:27017") #host uri
-	db = client.Trivias    #Select the database
-	todos = db[Categoria] #Select the collection name
-	#Adding a trivia
 	question=request.values.get("preguntaTrivia")
 	choiceA=request.values.get("pregunta1")
 	choiceB=request.values.get("pregunta2")
@@ -112,7 +116,7 @@ def actionMT ():
 	correct=request.values.get("Respuesta")
 	Categoria=request.values.get("select")
 	id=request.values.get("_id")
-	todos.update({"_id":ObjectId(id)}, {'$set':{ "question":question, "choiceA":choiceA,"choiceB":choiceB ,"choiceC":choiceC,"choiceD":choiceD,"correct ":correct,"Categoria":Categoria }})
+	todosT.update({"_id":ObjectId(id)}, {'$set':{ "question":question, "choiceA":choiceA,"choiceB":choiceB ,"choiceC":choiceC,"choiceD":choiceD,"correct ":correct,"Categoria":Categoria }})
 	
 	
 	

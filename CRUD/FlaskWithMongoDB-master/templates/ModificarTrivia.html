@@ -149,13 +149,6 @@
           <!-- your content here -->
           <!-- First Row -->
           <table class="col-md-12">
-              <tr id="row" >
-                <th class="name" >Pregunta</th>
-                
-            <th class="func1">eliminar</th>
-            <th class="func2">modificar</th>
-              </tr>
-
 
           <form action="/actionMT" method="POST">
             {% for task in tasks %}
@@ -188,8 +181,8 @@
             <tr>
               <input style="text-align: center;" class="col-md-12" type="text" name="preguntaTrivia" value="{{ task['question'] }}" placeholder="{{ task['question'] }}"></tr>
             <tr>
-              <td>pregunta </td><td><input  class="col-md-12" type="text" name="pregunta1"   value="{{ task['choiceA'] }}" placeholder="a) {{ task['choiceA'] }}"></td>
-              <td>A </td><td><input  class="col-md-12" type="text" name="pregunta2"  value="{{ task['choiceB'] }}" placeholder="b) {{ task['choiceB'] }}"></td>
+              <td><input  class="col-md-12" type="text" name="pregunta1"   value="{{ task['choiceA'] }}" placeholder="a) {{ task['choiceA'] }}"></td>
+              <td><input  class="col-md-12" type="text" name="pregunta2"  value="{{ task['choiceB'] }}" placeholder="b) {{ task['choiceB'] }}"></td>
             </tr>
             <tr>
               <td><input class="col-md-12" type="text" name="pregunta3"   value="{{ task['choiceC'] }}" placeholder="c) {{ task['choiceC'] }}"></td>
@@ -201,7 +194,7 @@
               <tr>
                   {% endfor %}
             <tr><td></td><td style="text-align: right;"><button type="submit" class="btn btn-info" style="width: 10rem; " onclick="location.href='./ModificarTrivia.html'">Modificar Trivia</button><button type="button" class="btn btn-primary" style="width: 10rem;" onclick="location.href='./Administrador.html'">Cancelar</button></td></tr>
-          </table>
+          
         </form>
           
 
