@@ -143,6 +143,8 @@
               <p class="card-category">Preguntas sobre superheroes de todos los tiempos
               </p>
             </div>
+{% if todos[0] %}   
+
       {% if men ==0 %}
        <!-- ultima pregunta -->
       <p>
@@ -218,7 +220,7 @@
       </p>
       {% endif %}
       
-     
+      
             <div class="card-body">
                
                 <div class="col-md-12 ">
@@ -228,7 +230,7 @@
                           <h4 class="card-title">
                               <form method="POST">
                               <div class="alert alert-warningQ" >
-                                 
+                                                
                                   <span class="question">{{ todos[a3]["question"] }}</span>  
                           </h4>     
                         </div>
@@ -245,7 +247,7 @@
                 <div class="col-md-8">
                   <h4 class="card-title"> </h4>
                   {% set pnr = a3 %}
-                  
+                            
                   <div class="alert alert-infoS">
                      
                       <input type="radio" value="{{todos[a3]['choiceA']}}" name="valo">
@@ -302,7 +304,80 @@
 
           </div>
            <!-- end div md12 -->
+           
         </div>
+        {% else %}
+        <div class="card-body">
+               
+          <div class="col-md-12 ">
+              <div class="places-buttons">
+                <div class="row">
+                  <div class="col-md-8  ml-auto mr-auto text-center">
+                    <h4 class="card-title">
+                        <form method="POST">
+                        <div class="alert alert-warningQ" >
+                                          
+                            <span class="question">Pereguntan</span>  
+                    </h4>     
+                  </div>
+                   <!-- end div  class before title question-->    
+                  <div class="col-md-4  text-center">
+                      <div class="alertS alert-dangerR " >
+                          <span>Score:  {{ pun }}</span>
+                       </div>
+                  </div>
+          </div>
+      <!-- end div row title places buttons -->    
+      <!-- div row  choices-->     
+        <div class="row">
+          <div class="col-md-8">
+            <h4 class="card-title"> </h4>
+            {% set pnr = a3 %}
+                      
+            <div class="alert alert-infoS">
+               
+                <input type="radio" value="choiceA" name="valo">
+                choiceA
+            </div>
+            <div class="alert alert-infoS">
+                <input type="radio" value="choiceB" name="valo">
+                choiceB
+
+              </div>
+              <div class="alert alert-infoS">
+
+                  <input type="radio" value="choiceC" name="valo">
+                  choiceC
+                </div>
+            <div class="alert alert-infoS ">
+               
+                <input type="radio" value="choiceD" name="valo">
+                choiceD
+              </div>
+          
+          <br>
+          <div class="col-lg-8 col-md-10 ml-auto mr-auto">
+              <button type="submit">Siguiente</button>
+          </div>
+          </p>       
+          </div>
+          
+          <!-- div img audio -->
+         </div> 
+          <!-- end div img audio -->
+        
+        <!-- end div row choices -->
+      </div>
+    <!-- end div places buttons -->
+
+    </div>
+     <!-- end div md12 -->
+    
+  </div>
+
+
+        {% endif %}
+        
       </div>
     
        <footer class="footer">
