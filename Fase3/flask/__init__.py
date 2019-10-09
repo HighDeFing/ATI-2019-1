@@ -131,7 +131,29 @@ def rankingU ():
     return render_template('rankig_usuario(BuscadorUsuario).html')
 
 #navegacion admin
+@app.route("/admin")
+def admin ():    
+    return render_template('admin/homeadmin.html')
 
+@app.route("/useradmin.html")
+def useradmin ():    
+    return render_template('admin/useradmin.html')
+
+@app.route("/administrar_roles.html")
+def rolesdmin ():    
+    return render_template('admin/administrar_roles.html')
+
+@app.route("/helpAdmin.html")
+def helpadmin ():    
+    return render_template('admin/helpadmin.html')
+
+@app.route("/homeadmin.html")
+def homeadmin ():    
+    return render_template('admin/homeadmin.html')
+
+@app.route("/visualizar_status_premios.html")
+def premiosadmin ():    
+    return render_template('admin/visualizar_status_premios.html')
 
 
 #operaciones crud del admin
@@ -143,19 +165,13 @@ client = MongoClient("mongodb://127.0.0.1:27017") #host uri
 db = client.Trivias    #Select the database
 todosC = db.Categorias #Select the collection name
 
-def redirect_url():
-    return request.args.get('next') or \
-           request.referrer or \
-           url_for('CrearCategoria')
-
-
-@app.route("/adminCrearCategoria")
+@app.route("/CrearCategoria.html")
 def lists ():
 	#Display the all Tasks
 	
 	todos_l = todos.find()
 	a1="active"
-	return render_template('CrearCategoria.html',a1=a1,todos=todos_l,t=title,h=heading)
+	return render_template('admin/CrearCategoria.html',a1=a1,todos=todos_l,t=title,h=heading)
 
 
 @app.route("/action", methods=['POST'])
@@ -177,7 +193,7 @@ def remove ():
 def update ():
 	id=request.values.get("_id")
 	task=todos.find({"_id":ObjectId(id)})
-	return render_template('modificarCategoria.html',tasks=task,h=heading,t=title)
+	return render_template('admin/modificarCategoria.html',tasks=task,h=heading,t=title)
 
 @app.route("/action3", methods=['POST'])
 def action3 ():
@@ -195,14 +211,14 @@ todosT = db.Trivia11 #Select the collection name
 @app.route("/CrearTrivia.html")
 def CTrivia ():
 	todos_lT = todosT.find()
-	return render_template("/CrearTrivia.html",todos=todos_lT,t=title,h=heading)
+	return render_template("admin/CrearTrivia.html",todos=todos_lT,t=title,h=heading)
 
 @app.route("/ModificarTrivia.html")
 def MTrivia ():
 	todos_lT = todosT.find()
 	id=request.values.get("_id")
 	task=todosT.find({"_id":ObjectId(id)})
-	return render_template('ModificarTrivia.html',tasks=task,h=heading,t=title)
+	return render_template('admin/ModificarTrivia.html',tasks=task,h=heading,t=title)
 
 
 
@@ -236,7 +252,7 @@ def actionCT ():
 	correct=request.values.get("Respuesta")
 	Categoria=request.values.get("select")
 	todos.insert({ "question":question, "choiceA":choiceA,"choiceB":choiceB ,"choiceC":choiceC,"choiceD":choiceD,"correct ":correct,"Categoria":Categoria })
-	return redirect("/Administrador.html")
+	return redirect("Administrador.html")
 
 @app.route("/actionMT", methods=['POST'])
 def actionMT ():
@@ -252,7 +268,7 @@ def actionMT ():
 	Categoria=request.values.get("select")
 	id=request.values.get("_id")
 	todosT.update({"_id":ObjectId(id)}, {'$set':{ "question":question, "choiceA":choiceA,"choiceB":choiceB ,"choiceC":choiceC,"choiceD":choiceD,"correct ":correct,"Categoria":Categoria }})
-	return redirect("/Administrador.html")
+	return redirect("Administrador.html")
 
 
 

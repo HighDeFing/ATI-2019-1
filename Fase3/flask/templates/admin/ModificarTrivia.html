@@ -12,7 +12,7 @@
    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
    <!-- Material Kit CSS -->
-   <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+   <link href="static/assets/css/material-dashboard.css" rel="stylesheet" />
  </head>
  
  <body>
@@ -148,6 +148,11 @@
         <div class="container-fluid">
           <!-- your content here -->
           <!-- First Row -->
+          <table class="col-md-12">
+
+          <form action="/actionMT" method="POST">
+            {% for task in tasks %}
+            <input type="text" name="_id" value="{{ task['_id'] }}" hidden>
           <table  class="col-md-12">
             <tr>
                  <select name="select">
@@ -174,19 +179,23 @@
             </select>
             </tr>
             <tr>
-              <input style="text-align: center;" class="col-md-12" type="text" name="preguntaTrivia" placeholder="¿Pregunta de la Trivia?"></tr>
+              <input style="text-align: center;" class="col-md-12" type="text" name="preguntaTrivia" value="{{ task['question'] }}" placeholder="{{ task['question'] }}"></tr>
             <tr>
-              <td><input  class="col-md-12"type="text" name="pregunta1"   placeholder="a) Respuesta"></td>
-              <td><input  class="col-md-12" type="text" name="pregunta2"  placeholder="b) Respuesta"></td>
+              <td><input  class="col-md-12" type="text" name="pregunta1"   value="{{ task['choiceA'] }}" placeholder="a) {{ task['choiceA'] }}"></td>
+              <td><input  class="col-md-12" type="text" name="pregunta2"  value="{{ task['choiceB'] }}" placeholder="b) {{ task['choiceB'] }}"></td>
             </tr>
             <tr>
-              <td><input class="col-md-12" type="text" name="pregunta3"   placeholder="c) Respuesta"></td>
-              <td><input class="col-md-12" type="text" name="pregunta4"  placeholder="d) Respuesta"></td>
+              <td><input class="col-md-12" type="text" name="pregunta3"   value="{{ task['choiceC'] }}" placeholder="c) {{ task['choiceC'] }}"></td>
+              <td><input class="col-md-12" type="text" name="pregunta4"  value="{{ task['choiceD'] }}" placeholder="d) {{ task['choiceD'] }}"></td>
             </tr>
             <tr></tr>
-            <tr><td></td><td style="text-align: right;"><button type="button" class="btn btn-info" style="width: 10rem; " onclick="location.href='./ModificarTrivia.html'">Modificar Trivia</button><button type="button" class="btn btn-primary" style="width: 10rem;" onclick="location.href='./Administrador.html'">Cancelar</button></td></tr>
-          </table>
-
+            <tr>
+                <input style="text-align: center;" class="col-md-12" type="text" name="Respuesta" value="{{ task['correct '] }}" placeholder="{{ task['correct '] }}"></tr>
+              <tr>
+                  {% endfor %}
+            <tr><td></td><td style="text-align: right;"><button type="submit" class="btn btn-info" style="width: 10rem; " onclick="location.href='./ModificarTrivia.html'">Modificar Trivia</button><button type="button" class="btn btn-primary" style="width: 10rem;" onclick="location.href='./Administrador.html'">Cancelar</button></td></tr>
+          
+        </form>
           
 
       <footer class="footer">
