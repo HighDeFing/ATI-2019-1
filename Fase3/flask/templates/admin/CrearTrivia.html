@@ -11,7 +11,7 @@
    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
    <!-- Material Kit CSS -->
-   <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+   <link href="static/assets/css/material-dashboard.css" rel="stylesheet" />
  </head>
  
  <body>
@@ -19,7 +19,7 @@
      <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
      <div class="logo">
         <a href="./homeadmin.html" class="simple-text logo-mini">
-          <img  src="../assets/img/iconPreguntaGenerico.jpg" height="120" width="120" >
+          <img  src="static/assets/img/iconPreguntaGenerico.jpg" height="120" width="120" >
         </a>
         <a href="./homeadmin.html" class="simple-text logo-normal">
           Grupo 1
@@ -48,31 +48,25 @@
                <i class="material-icons">shuffle</i>
                <p>Gestionar Roles</p>
              </a>
-           </li>
-           <li class="nav-item ">
-                 <a class="nav-link"  href="./rankig_usuario(Buscador usuario).html">
-                   <i class="material-icons">format_list_numbered</i>
-                   <p>Rankings</p>
-                 </a>
-             </li>
+
              <li class="nav-item ">
                  <a class="nav-link" href="./helpAdmin.html">
                    <i class="material-icons">help</i>
                    <p>Help</p>
                  </a>
              </li>
-             <li class="nav-item ">
-                 <a class="nav-link" href="./notificationsadmin.html">
-                   <i class="material-icons">notifications</i>
-                   <p>Notifications</p>
-                 </a>
-               </li>
                <li class="nav-item active">
                 <a class="nav-link" href="./Administrador.html">
                   <i class="material-icons">Opciones de Administrador</i>
                   <p>Gestionar Trivia</p>
                 </a>
               </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="./CrearCategoria.html">
+                    <i class="material-icons">Opciones de Administrador</i>
+                    <p>Gestionar Categoria</p>
+                  </a>
+                </li>
               <li class="nav-item ">
                 <a class="nav-link" href="./visualizar ganadores.html">
                   <i class="material-icons">accessibility</i>
@@ -149,6 +143,28 @@
         <div class="container-fluid">
           <!-- your content here -->
           <!-- First Row -->
+          {% if todos[0] %}
+          <table class="col-md-12">
+              <tr id="row" >
+                <th class="name" >Categoria</th>
+                <th class="desc" >Descripcion</th>
+            <th class="func1">eliminar</th>
+            <th class="func2">modificar</th>
+              </tr>
+          {% for todo in todos %}
+            <tr class="datas" >
+              <td class="name" >{{ todo["question"] }}</td>
+              
+              <td class="func1" ><a href="./removeTrivia?_id={{ todo['_id'] }}"><button type="submit"  class="btn btn-info" >eliminar</button></a></td>
+              <td class="func1" ><a href="./ModificarTrivia.html?_id={{ todo['_id'] }}"><button type="submit" class="btn btn-info" >modificar</button></a></td>
+            </tr>
+          {% endfor %}
+          </table>
+          {% else %}
+            <h4>No Tasks in the List !!</h4>
+          {% endif %}
+
+          <form action="/actionCT" method="POST">
           <table  class="col-md-12">
             <tr>
               <select name="select">
@@ -169,8 +185,16 @@
               <td><input class="col-md-12" type="text" name="pregunta3" placeholder="c) Respuesta"></td>
               <td><input class="col-md-12" type="text" name="pregunta4" placeholder="d) Respuesta"></td>
             </tr>
-            <tr></tr>
-            <tr><td></td><td style="text-align: right;"><button type="button" class="btn btn-info" style="width: 10rem; " onclick="location.href='./CrearTrivia.html'">Crear Trivia</button><button type="button" class="btn btn-success" style="width: 10rem;" onclick="location.href='./Administrador.html'">Cancelar</button></td></tr>
+            <tr>
+              
+            </tr>
+            <tr>
+                <input style="text-align: center;" class="col-md-12" type="text" name="Respuesta" placeholder="Respuesta correcta"></tr>
+              <tr>
+
+            <tr><td></td><td style="text-align: right;"><button type="submit" class="btn btn-info" style="width: 10rem; " onclick="location.href='./CrearTrivia.html'">Crear Trivia</button><button type="submit" class="btn btn-success" style="width: 10rem;" onclick="location.href='./Administrador.html'">Cancelar</button></td></tr>
+          
+          </form>
           </table>
 
           

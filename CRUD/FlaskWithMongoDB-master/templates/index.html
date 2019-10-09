@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>{{t}}</title>
+		<!-- href="/static/assets/style.css"-->
+		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/style.css')}}" >
+		<link rel="stylesheet" type="text/css"  href="{{ url_for('static',filename='assets/emoji.css')}}" >
+		<script src="{{ url_for('static',filename='assets/twemoji.min.js')}}"></script>  
+		<script src="{{ url_for('static',filename='assets/emoji.js')}}"></script>
+	</head>
+<body>
+	<h1>{{ h }}</h1>
+	<ul>
+		<li><a href="/list" class="{{ a1 }}">ALL</a></li>
+	</ul>
+	<hr>
+	{% if todos[0] %}
+	<div span="right">
+
+	</div>
+	<b><big>To-Do LIST :</big></b>
+	<table>
+	    <tr id="row">
+
+	    	<th class="name">Categoria</th>
+	    	<th class="desc">Descripcion</th>
+		<th class="func1">eliminar</th>
+		<th class="func2">modificar</th>
+	    </tr>
+	{% for todo in todos %}
+		<tr class="datas">
+			<td class="name">{{ todo["Categoria"] }}</td>
+			<td class="desc">{{ todo["desc"] }}</td>
+			<td class="func1"><a href="./remove?_id={{ todo['_id'] }}"><button type="submit">DELETE</button></a></td>
+			<td class="func1"><a href="./update?_id={{ todo['_id'] }}"><button type="submit">EDIT</button></a></td>
+		</tr>
+	{% endfor %}
+	</table>
+	{% else %}
+		<h4>No Tasks in the List !!</h4>
+	{% endif %}
+	<hr/>
+	<form action="/action" method="POST">
+	<table class="none">
+		<tr>
+			<td><b><big><label>Crear Categoria </label></big></b></td>
+		</tr>
+		<tr>
+		<td><input type="text" name="name" placeholder="nombre categoria" /></td>
+		<td><textarea name="desc" rows="1" cols="30" placeholder="ingrese la descripcion..." required></textarea></td>
+		<td><button type="submit"> Crear </button></td>
+		</tr>
+	</form>
+	</table>
+	<script>
+
+	</script>
+</body>
+</html>
