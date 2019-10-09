@@ -155,6 +155,10 @@ def homeadmin ():
 def premiosadmin ():    
     return render_template('admin/visualizar_status_premios.html')
 
+@app.route("/visualizarGanadores.html")
+def ganadores ():    
+    return render_template('admin/visualizarGanadores.html')
+
 
 #operaciones crud del admin
 title = "TODO sample application with Flask and MongoDB"
@@ -169,7 +173,7 @@ todosC = db.Categorias #Select the collection name
 def lists ():
 	#Display the all Tasks
 	
-	todos_l = todos.find()
+	todos_l = todosC.find()
 	a1="active"
 	return render_template('admin/CrearCategoria.html',a1=a1,todos=todos_l,t=title,h=heading)
 

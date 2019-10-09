@@ -13,7 +13,7 @@
 <html lang="en">
 
 <head>
-  <title>Status de los premios</title>
+  <title>Visualizar los ganadores</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -67,6 +67,7 @@
                   <p>Help</p>
                 </a>
             </li>
+
               <li class="nav-item ">
                   <a class="nav-link" href="./Administrador.html">
                     <i class="material-icons">Opciones de Administrador</i>
@@ -79,13 +80,13 @@
                       <p>Gestionar Categoria</p>
                     </a>
                   </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./visualizar ganadores.html">
+                <li class="nav-item active">
+                  <a class="nav-link" href="./visualizarGanadores.html">
                     <i class="material-icons">accessibility</i>
                     <p>Ganadores</p>
                   </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item ">
                   <a class="nav-link" href="./visualizar_status_premios.html">
                     <i class="material-icons">redeem</i>
                     <p>status Premios</p>
@@ -101,7 +102,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Status de los premios</a>
+            <a class="navbar-brand" href="#pablo">Visualizar los ganadores</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -125,7 +126,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="./useradmin.html">Profile</a>
+                  <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="../Home.html">Log out</a>
@@ -140,37 +141,92 @@
       <div class="content">
         <div class="container-fluid">
           <!-- your content here -->
-          
+
+           <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Buscar Ganadores...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
 
 
-          <div class="progress-container">
-            <span class="progress-badge">Primer premio ENVIADO</span>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">
-                </div>
-            </div>
-        </div>
-        <div class="progress-container progress-success">
-            <span class="progress-badge">Segundo premio POR ENTREGAR </span>
-            <div class="progress">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
-                </div>
-            </div>
-        </div>
-        <div class="progress-container progress-danger">
-            <span class="progress-badge">Tercer premio ENTREGADO</span>
-            <div class="progress">
-                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
+ 
+ <div class="table-responsive">
+  <table class="table">
+    <thead>
+        <tr>
+            <th class="text-center">#</th>
+            <th>Nombre y Apellido</th>
+            <th>Tipo de Ganador</th>
+            <th>Lugar</th>
+            <th class="text-right">Puntaje</th>
+            <th class="text-right">Acción</th>      
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="text-center">1</td>
+            <td>Jose Mike</td>
+            <td>Avanzado</td>
+            <td>Primer Lugar</td>
+            <td class="text-right">100%</td>
+            <td class="td-actions text-right">
+                <button type="button" rel="tooltip" class="btn btn-info">
+                    <i class="material-icons">person</i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-success">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-danger">
+                    <i class="material-icons">close</i>
+                </button>
+            </td>
+            
+        </tr>
+        <tr>
+            <td class="text-center">2</td>
+            <td>John Doe</td>
+            <td>Intermedio</td>
+            <td>Segundo Lugar</td>
+            <td class="text-right">97%</td>
+            <td class="td-actions text-right">
+                <button type="button" rel="tooltip" class="btn btn-info">
+                    <i class="material-icons">person</i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-success">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-danger">
+                    <i class="material-icons">close</i>
+                </button>
+            </td>
+           
+        </tr>
+        <tr>
+            <td class="text-center">3</td>
+            <td>Alex Mike</td>
+            <td>Basico</td>
+            <td>Tercer Lugar</td>
+            <td class="text-right">92%</td>
+            <td class="td-actions text-right">
+                <button type="button" rel="tooltip" class="btn btn-info">
+                    <i class="material-icons">person</i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-success">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button type="button" rel="tooltip" class="btn btn-danger">
+                    <i class="material-icons">close</i>
+                </button>
+            </td>
+           
+        </tr>
+    </tbody>
+</table>
+</div>
         </div>
       </div>
 
@@ -181,7 +237,7 @@
             <ul>
               <li>
                 <a href="Home.html">
-                  Status de los premios
+                  Visualizar ganadores
                 </a>
               </li>
             </ul>
