@@ -59,7 +59,7 @@ def home1():
 @app.route('/trivias1.html', methods=['GET', 'POST'])
 def trivias1():
     global todos
-    client = MongoClient("mongodb://127.0.0.1:27017") #host uri
+    client = MongoClient('db', 27017) #host uri
     db = client.Trivias   #Select the database
     todos  = db.Trivia11 #Select the collection name
     global a
@@ -150,4 +150,4 @@ def Phelp ():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
