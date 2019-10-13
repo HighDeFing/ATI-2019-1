@@ -1,4 +1,0 @@
-mongoimport --db Trivias --collection Trivia11 --drop --file "ruta\trivias11.json" --jsonArray
-
-
-mongoimport --db Trivias --collection Categorias --drop --file "C:ruta\categoria.json" --jsonArray
