@@ -1,5 +1,0 @@
-mongoimport --db Trivias --collection Trivia11 --drop --file "C:\Users\Kathy\Documents\computacion\programas 1-2019\ATI\proyecto\implementacion\trivias11.json" --jsonArray
-
-C:\Users\Kathy\Desktop\CRUD
-
-mongoimport --db Trivias --collection Categorias --drop --file "C:\Users\Kathy\Desktop\CRUD\categoria.json" --jsonArray

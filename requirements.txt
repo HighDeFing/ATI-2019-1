@@ -1,5 +1,0 @@
-requests
-Flask
-bson
-pymongo
-flask_pymongo
