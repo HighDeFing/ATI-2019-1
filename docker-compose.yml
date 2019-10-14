@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  db:
+    image: mongo:latest
+  web:
+    build: .
+    command: python -u Fase4/flask/__init__.py
+    ports:
+    - "5000:5000"
+    volumes:
+    - .:/app
+    depends_on:
+    - db
+
+
+
