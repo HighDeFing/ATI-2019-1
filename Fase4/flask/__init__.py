@@ -1,8 +1,10 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort
 from flask import request,url_for # For flask implementation
 from bson import ObjectId # For ObjectId to work
+from flask import Flask, current_app
 from pymongo import MongoClient
 import os
+import json
 
 app = Flask(__name__)
 
@@ -15,9 +17,27 @@ pre=0
 todos=[]
 todos_l=[]
 
-client = MongoClient("mongodb://127.0.0.1:27017") #host uri
-db = client.Trivias   #Select the database
-todos  = db.Trivia11 #Select the collection name
+client = MongoClient(
+    os.environ['DB_PORT_27017_TCP_ADDR'],
+    27017) #host
+client.drop_database('Trivias')
+
+db = client['Trivias'] #database created
+db = client.Trivias
+db.Categorias.delete_many({}) #restart from zero
+db.Trivia11.delete_many({})
+
+todosC = db["Categorias"] #create the name of categorias
+with open('Fase4/flask/categoria.json') as json_file:
+    data = json.load(json_file)
+todosC = db.Categorias
+db.todosC.insert_many(data)
+
+todos = db["Trivia11"] #collection of trivias
+with open('Fase4/flask/trivias11.json') as json_file:
+    data = json.load(json_file)
+todos = db.Trivia11 #Select the collection name
+db.todos.insert_many(data)
 
 
 @app.route('/')
@@ -31,6 +51,15 @@ def home(name=None):
         return render_template('home.html', name='home.html')
     elif session.get('logged_in'):
         return render_template('homelogin.html', name='home.html')
+
+
+@app.route('/sign_up', methods=['POST'])
+def sign_up():
+    if request.form['password'] == '1234' and request.form['username'] == 'heider':
+        session['logged_in'] = True
+    else:
+        session['logged_in'] = True
+    return home()
 
 
 @app.route('/login', methods=['POST'])
@@ -55,9 +84,10 @@ def home1():
 @app.route('/trivias1.html', methods=['GET', 'POST'])
 def trivias1():
     global todos
-    client = MongoClient("mongodb://127.0.0.1:27017") #host uri
-    db = client.Trivias   #Select the database
-    todos  = db.Trivia11 #Select the collection name
+    client = MongoClient(
+        os.environ['DB_PORT_27017_TCP_ADDR'], 27017)  # host
+    db = client.Trivias  # Select the database
+    todos = db.Trivia11  # Select the collection name
     global a
     a=0
     global punkty
@@ -71,7 +101,11 @@ def index():
     global todos_l
     
     global cor
-    todos_l = todos.find()
+    client = MongoClient(
+        os.environ['DB_PORT_27017_TCP_ADDR'], 27017)  # host
+    db = client.Trivias  # Select the database
+    todos = db.Trivia11  # Select the collection name
+    todos_l = db.todos.find()
     global a
     global pre
 
@@ -250,20 +284,22 @@ def AdminTri ():
 
 @app.route("/actionCT", methods=['POST'])
 def actionCT ():
+    client = MongoClient(
+        os.environ['DB_PORT_27017_TCP_ADDR'],
+        27017)  # host
+    db = client.Trivias    #Select the database
+    todos = db.Trivia11 #Select the collection name
+    #Adding a trivia
+    question=request.values.get("preguntaTrivia")
+    choiceA=request.values.get("pregunta1")
+    choiceB=request.values.get("pregunta2")
+    choiceC=request.values.get("pregunta3")
+    choiceD=request.values.get("pregunta4")
+    correct=request.values.get("Respuesta")
+    Categoria=request.values.get("select")
+    todos.insert({ "question":question, "choiceA":choiceA,"choiceB":choiceB ,"choiceC":choiceC,"choiceD":choiceD,"correct ":correct,"Categoria":Categoria })
+    return redirect("Administrador.html")
 
-	client = MongoClient("mongodb://127.0.0.1:27017") #host uri
-	db = client.Trivias    #Select the database
-	todos = db.Trivia11 #Select the collection name
-	#Adding a trivia
-	question=request.values.get("preguntaTrivia")
-	choiceA=request.values.get("pregunta1")
-	choiceB=request.values.get("pregunta2")
-	choiceC=request.values.get("pregunta3")
-	choiceD=request.values.get("pregunta4")
-	correct=request.values.get("Respuesta")
-	Categoria=request.values.get("select")
-	todos.insert({ "question":question, "choiceA":choiceA,"choiceB":choiceB ,"choiceC":choiceC,"choiceD":choiceD,"correct ":correct,"Categoria":Categoria })
-	return redirect("Administrador.html")
 
 @app.route("/actionMT", methods=['POST'])
 def actionMT ():
@@ -286,6 +322,6 @@ def actionMT ():
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
-    app.run()
+    app.run(host='0.0.0.0', port=5000, debug=True)
 
 
