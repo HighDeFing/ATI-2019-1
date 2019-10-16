@@ -291,7 +291,7 @@
                 <div class="description">
                   <h4 class="info-title">Ranking</h4>
                   <p class="description">
-                  Anwser more questions to get a higher place and earn prices.
+                  Answer more questions to get a higher place and earn prices.
                   </p>
                 </div>
               </div>
@@ -332,14 +332,14 @@
                 <h4> or be classical </h4>
               </div>
 
-              <form class="form" method="" action="">
+              <form class="form" method="POST" action="/sign_up">
                 <div class="card-body">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text"><i class="material-icons">face</i></div>
                       </div>
-                        <input type="text" class="form-control" placeholder="First Name...">
+                        <input type="text" class="form-control" name="username" placeholder="First Name...">
                     </div>
                   </div>
 
@@ -348,7 +348,7 @@
                     <div class="input-group-prepend">
                       <div class="input-group-text"><i class="material-icons">email</i></div>
                     </div>
-                      <input type="text" class="form-control" placeholder="Email...">
+                      <input type="text" class="form-control" name="email" placeholder="Email...">
                   </div>
                 </div>
 
@@ -357,7 +357,7 @@
                     <div class="input-group-prepend">
                       <div class="input-group-text"><i class="material-icons">lock_outline</i></div>
                     </div>
-                      <input type="password" placeholder="Password..." class="form-control" />
+                      <input type="password" name="password" placeholder="Password..." class="form-control" />
                   </div>
                 </div>
 
@@ -372,7 +372,7 @@
                 </div>
                 </div>
               <div class="modal-footer justify-content-center">
-              <a href="#pablo" class="btn btn-primary btn-round">Get Started</a>
+              <input class="btn btn-primary btn-round" type="submit"></input>
               </div>
               </form>
             </div>
