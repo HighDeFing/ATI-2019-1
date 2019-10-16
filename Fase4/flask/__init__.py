@@ -1,6 +1,7 @@
 from flask import Flask, flash, redirect, render_template, request, session, abort
 from flask import request,url_for # For flask implementation
 from bson import ObjectId # For ObjectId to work
+from flask import Flask, current_app
 from pymongo import MongoClient
 import os
 import json
@@ -50,6 +51,15 @@ def home(name=None):
         return render_template('home.html', name='home.html')
     elif session.get('logged_in'):
         return render_template('homelogin.html', name='home.html')
+
+
+@app.route('/sign_up', methods=['POST'])
+def sign_up():
+    if request.form['password'] == '1234' and request.form['username'] == 'heider':
+        session['logged_in'] = True
+    else:
+        session['logged_in'] = True
+    return home()
 
 
 @app.route('/login', methods=['POST'])
