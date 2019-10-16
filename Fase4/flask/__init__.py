@@ -206,8 +206,8 @@ title = "TODO sample application with Flask and MongoDB"
 heading = "TODO Reminder with Flask and MongoDB"
 
 #para crear categorias
-client = MongoClient("mongodb://127.0.0.1:27017") #host uri
-db = client.Trivias    #Select the database
+#client = MongoClient("mongodb://127.0.0.1:27017") #host uri
+#db = client.Trivias    #Select the database
 todosC = db.Categorias #Select the collection name
 
 @app.route("/CrearCategoria.html")
@@ -225,14 +225,14 @@ def action ():
 	name=request.values.get("name")
 	desc=request.values.get("desc")
 	todosC.insert({ "Categoria":name, "desc":desc})
-	return redirect("/list")
+	return redirect(url_for('lists'))
 
 @app.route("/remove")
 def remove ():
 	#Deleting a Task with various references
 	key=request.values.get("_id")
 	todosC.remove({"_id":ObjectId(key)})
-	return redirect("/")
+	return redirect(url_for('lists'))
 
 @app.route("/update")
 def update ():
@@ -247,7 +247,7 @@ def action3 ():
 	desc=request.values.get("desc")
 	id=request.values.get("_id")
 	todosC.update({"_id":ObjectId(id)}, {'$set':{ "Categoria":name, "desc":desc}})
-	return redirect("/")
+	return redirect(url_for('lists'))
 
 #para crear preguntas de trivias
   
