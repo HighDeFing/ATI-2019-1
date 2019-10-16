@@ -8,7 +8,7 @@
         "correct ": "Robert 'Bob' Parr"
     },{
         "question" : "¿A cual super heroe corresponde la imagen?",
-        "imgSrc" : "static/assets/images/trivia11/wonderwoman.jpg",
+        "imgSrc" : "static/images/trivia11/wonderwoman.jpg",
         "choiceA" : "Thor",
         "choiceB" : "Superman",
         "choiceC" : "Mujer Maravilla",
@@ -16,7 +16,7 @@
         "correct ": "Mujer Maravilla"
     },{
         "question" : "¿A cual super heroe corresponde la canción?",
-        "audSrc": "static/assets/audio/trivia11/spidemar-song1.mp3",
+        "audSrc": "static/audio/trivia11/spidemar-song1.mp3",
         "choiceA" : "Capitan America",
         "choiceB" : "Iron Man",
         "choiceC" : "Spiderman",

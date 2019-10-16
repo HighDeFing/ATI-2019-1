@@ -175,7 +175,7 @@ def rolesdmin ():
 
 @app.route("/helpAdmin.html")
 def helpadmin ():    
-    return render_template('admin/helpadmin.html')
+    return render_template('admin/helpAdmin.html')
 
 @app.route("/homeadmin.html")
 def homeadmin ():    
