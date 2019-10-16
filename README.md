@@ -1,4 +1,3 @@
-<<<<<<< 
 =======
 # ATI-2019-1
 Para ejecutar:
@@ -8,4 +7,4 @@ Para ejecutar:
 Se encuentra en `localhost:5000`
 
 
->>>>>>> develop
+
