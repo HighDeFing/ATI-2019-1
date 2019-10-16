@@ -22,8 +22,8 @@ client = MongoClient(
 
 db = client['Trivias'] #database created
 db = client.Trivias
-db.todosC.delete_many({}) #restart from zero
-db.todos.delete_many({})
+db.Categorias.delete_many({}) #restart from zero
+db.Trivia11.delete_many({})
 
 todosC = db["Categorias"] #create the name of categorias
 with open('Fase4/flask/categoria.json') as json_file:
