@@ -152,7 +152,7 @@ def rolesdmin ():
 
 @app.route("/helpAdmin.html")
 def helpadmin ():    
-    return render_template('admin/helpadmin.html')
+    return render_template('admin/helpAdmin.html')
 
 @app.route("/homeadmin.html")
 def homeadmin ():    
@@ -190,20 +190,20 @@ def action ():
 	#Adding a Task
 	name=request.values.get("name")
 	desc=request.values.get("desc")
-	todos.insert({ "Categoria":name, "desc":desc})
+	todosC.insert({ "Categoria":name, "desc":desc})
 	return redirect("/list")
 
 @app.route("/remove")
 def remove ():
 	#Deleting a Task with various references
 	key=request.values.get("_id")
-	todos.remove({"_id":ObjectId(key)})
+	todosC.remove({"_id":ObjectId(key)})
 	return redirect("/")
 
 @app.route("/update")
 def update ():
 	id=request.values.get("_id")
-	task=todos.find({"_id":ObjectId(id)})
+	task=todosC.find({"_id":ObjectId(id)})
 	return render_template('admin/modificarCategoria.html',tasks=task,h=heading,t=title)
 
 @app.route("/action3", methods=['POST'])
@@ -212,7 +212,7 @@ def action3 ():
 	name=request.values.get("name")
 	desc=request.values.get("desc")
 	id=request.values.get("_id")
-	todos.update({"_id":ObjectId(id)}, {'$set':{ "Categoria":name, "desc":desc}})
+	todosC.update({"_id":ObjectId(id)}, {'$set':{ "Categoria":name, "desc":desc}})
 	return redirect("/")
 
 #para crear preguntas de trivias
