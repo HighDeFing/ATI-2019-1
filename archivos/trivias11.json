@@ -1,0 +1,59 @@
+[
+    {
+        "question" : "¿Cual es la verdadera identidad de Mr. Increíble?",
+        "choiceA" :"Robert 'Bob' Parr",
+        "choiceB" :"Bruce Wayne",
+        "choiceC" :"Kal-El",
+        "choiceD" :"Wally West",
+        "correct ": "Robert 'Bob' Parr"
+    },{
+        "question" : "¿A cual super heroe corresponde la imagen?",
+        "imgSrc" : "static/images/trivia11/wonderwoman.jpg",
+        "choiceA" : "Thor",
+        "choiceB" : "Superman",
+        "choiceC" : "Mujer Maravilla",
+        "choiceD" : "black widow",
+        "correct ": "Mujer Maravilla"
+    },{
+        "question" : "¿A cual super heroe corresponde la canción?",
+        "audSrc": "static/audio/trivia11/spidemar-song1.mp3",
+        "choiceA" : "Capitan America",
+        "choiceB" : "Iron Man",
+        "choiceC" : "Spiderman",
+        "choiceD" : "Shazam",
+        "correct ": "Spiderman"
+    },{
+        "question" : "¿Carol Danvers es mejor conocida como?",
+        "tipo":"S",
+        "premioIns":500,
+        "choiceA" : "Carol",
+        "choiceB" : "Capitana Marvel",
+        "choiceC" : "Danvers",
+        "choiceD" : "Mujer Maravilla",
+        "correct ": "Capitana Marvel"
+    },{
+        "question" : "¿Black Widow nacio en?",
+        "choiceA" : "Alemania",
+        "choiceB" : "Canada",
+        "choiceC" : "Estados Unidos",
+        "choiceD" : "Union Sovietica",
+        "correct ": "Union Sovietica"
+    },{
+            "question" : "¿Red Skull es el archienemigo de ?",
+            "tipo":"S",
+            "imgSrc" : "static/images/trivia11/redSkull.png",
+            "premioIns":1000,
+            "choiceA" : "Superman",
+            "choiceB" : "Capitan America",
+            "choiceC" : "Batman",
+            "choiceD" : "Mujer Maravilla",
+            "correct ": "Capitan America"
+    },{
+            "question" : "¿La mujer invisible Forma parte de ?",
+            "choiceA" : "los 4 Fantasticos",
+            "choiceB" : "Los Vengadores",
+            "choiceC" : "X-Men",
+            "choiceD" : "Jovenes Titanes",
+            "correct ": "los 4 Fantasticos"
+        }
+]
