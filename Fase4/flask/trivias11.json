@@ -16,7 +16,7 @@
         "correct ": "Mujer Maravilla"
     },{
         "question" : "¿A cual super heroe corresponde la canción?",
-        "audSrc": "static/audio/trivia11/spidemar-song1.mp3",
+        "audSrc": "static/audio/spidemar-song1.mp3",
         "choiceA" : "Capitan America",
         "choiceB" : "Iron Man",
         "choiceC" : "Spiderman",
