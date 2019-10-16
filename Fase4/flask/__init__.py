@@ -19,6 +19,7 @@ todos_l=[]
 client = MongoClient(
     os.environ['DB_PORT_27017_TCP_ADDR'],
     27017) #host
+client.drop_database('Trivias')
 
 db = client['Trivias'] #database created
 db = client.Trivias
